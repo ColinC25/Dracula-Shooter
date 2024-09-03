@@ -1,10 +1,17 @@
 extends CharacterBody2D
 
-var gravity = 30
-var move_speed = 40
-var max_move_speed_left = -1600
-var max_move_speed_right = 1600
-var jump_velocity = 1800
+#TODOS
+#Correct velocity when opposite direction input is pressed
+#to match cold stop velocity drop
+#Create health bar
+#Create collision signal with enemies to lose health
+#Fix jump bug so that can_jump only turns true when touching ground, not any wall
+
+var gravity = 25
+var move_speed = 50
+var max_move_speed_left = -1300
+var max_move_speed_right = 1300
+var jump_velocity = 1500
 var char_facing_right = true
 var can_jump = false
 
@@ -38,9 +45,9 @@ func movement_handler(delta):
 			velocity.x = velocity.x + move_speed
 	else:
 		if velocity.x > 0:
-			velocity.x = velocity.x - velocity.x / 10
+			velocity.x = velocity.x - velocity.x / 8
 		if velocity.x < 0:
-			velocity.x = velocity.x - velocity.x / 10
+			velocity.x = velocity.x - velocity.x / 8
 
 func jump():
 	if Input.is_action_just_pressed("jump") and can_jump == true:
