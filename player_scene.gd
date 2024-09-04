@@ -6,6 +6,7 @@ extends CharacterBody2D
 #Create health bar
 #Create collision signal with enemies to lose health
 #Fix jump bug so that can_jump only turns true when touching ground, not any wall
+#TESTING NEW BRANCH
 
 var gravity = 25
 var move_speed = 50
